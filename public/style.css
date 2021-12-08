@@ -5,16 +5,18 @@
 }
 
 body {
+  background-color: paleturquoise;
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
 
 .page-header {
-  font-size: 3rem;
+  font-size: 6rem;
   padding: 20px 50px;
-  background-color: rgb(0, 110, 255);
-  color: #fff;
+  background-color: rgb(183, 199, 221);
+  color: black;
   font-weight: 900;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-bottom: 150px;
 }
 
@@ -22,12 +24,21 @@ body {
   min-width: 100px;
 }
 
-.user-container {
+
+#user-container {
   max-width: 500px;
 }
 
+#user-container .card-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#admin-container .card-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 thead {
-  background-color: rgb(0, 110, 255);
+  background-color: rgb(124, 133, 43);
   color: #fff;
 }
 

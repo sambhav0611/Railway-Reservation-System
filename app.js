@@ -63,6 +63,11 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 })
 
+app.route("/adminlogin")
+.get((req, res) => {
+  res.sendFile(__dirname + "/adminPage.html");
+})
+
 app.route("/userregister")
 .get((req, res) => {
   res.sendFile(__dirname + "/register.html");
@@ -100,11 +105,6 @@ app.route("/userlogin")
   })
 })
 
-app.route("/adminlogin")
-.get((req, res) => {
-  res.sendFile(__dirname + "/adminPage.html");
-})
-
 
 app.route("/addtrain")
 .get((req, res) => {
@@ -129,15 +129,6 @@ app.route("/addtrain")
   });
 })
 
-app.get("/showtrains", (req, res) => {
-  Train.find({}, (error, foundTrains) => {
-    if (error) res.send(error);
-    else {
-      res.render("showTrains.ejs", {trainList: foundTrains});
-    }
-  })
-});
-
 app.route("/enquiry")
 .get((req, res) => {
   var today = new Date() 
@@ -159,6 +150,16 @@ app.route("/enquiry")
     }
   })
 });
+
+app.get("/showtrains", (req, res) => {
+  Train.find({}, (error, foundTrains) => {
+    if (error) res.send(error);
+    else {
+      res.render("showTrains.ejs", {trainList: foundTrains});
+    }
+  })
+});
+
 
 app.route("/bookticket")
 .get((req, res) => {
@@ -201,38 +202,6 @@ app.get("/viewtickets", (req, res) => {
   })
 });
 
-app.route("/reshedule")
-.get((req, res) => {
-  res.sendFile(__dirname + "/resheduleForm.html");
-})
-.post((req, res) => {
-  console.log(req.body.number);
-  Train.findOneAndUpdate({number: req.body.number}, {
-    fare: req.body.fare,
-    departure: req.body.departure,
-    arrival: req.body.arrival
-  },
-  (error, foundTrain) => {
-    if (error) res.send(error);
-    else {
-      res.send(foundTrain);
-    }
-  })
-  res.render("response.ejs", {content: "Train rescheduled successfully."});
-});
-
-app.route("/cancelticket")
-.get((req, res) => {
-  res.sendFile(__dirname + "/cancellationForm.html");
-})
-.post((req, res) => {
-  Ticket.findByIdAndRemove(req.body.pnr, (error, ticket) => {
-    if (error) res.send(error);
-    else {
-      res.render("response.ejs", {content: "Ticket cancelled successfully."});
-    }
-  });
-})
 
 // app.listen(4000, () => {
 //   console.log("Server is up and running on post: 3000");

@@ -16,27 +16,26 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   <!-- Personilzed css -->
-  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="public/form.css">
 </head>
 <body>
   <div class="form-signin">
     <form action="/bookticket" method="post">
-      <img class="mb-4" src="images/train-logo.png" alt="" width="75" height="75">
-    <h1 class="h3 mb-3 fw-normal">Insert Data to book ticket</h1>
+      <img class="mb-4" src="public/images/train-logo.png" alt="" width="75" height="75">
+    <h1>Insert Data to book ticket</h1>
     <div class="form-floating">
       <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Username" required>
       <label for="floatingInput">Username</label>
     </div>
     <div class="form-floating">
       <input name="seats" type="text" class="form-control" id="floatingInput" placeholder="Number of seats" required>
-      <label for="floatingInput">Seats</label>
+      <label for="floatingInput">Number of Seats</label>
     </div>
     <div class="form-floating">
       <input name="date" type="date" class="form-control" id="floatingInput" placeholder="Date of journey" required>
       <label for="floatingInput">Date of journey</label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Book</button>
-    <p class="mt-5 mb-3 text-muted">&copy; Krishnankit 2021</p>
   </form>
 </div>
 </body>
