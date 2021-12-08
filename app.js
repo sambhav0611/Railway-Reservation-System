@@ -15,8 +15,8 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() =>
-        app.listen(3333, () =>
-            console.log("Database Connected!", "Listening on Port " + 3333)
+        app.listen(5555, () =>
+            console.log("Database Connected!", "Listening on Port " + 5555)
         )
     );
 const trainSchema = new mongoose.Schema({
